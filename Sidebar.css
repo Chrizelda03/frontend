@@ -1,0 +1,302 @@
+/* Import Poppins font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 220px;
+  background-color: #253f21;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+  color: #fff;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  overflow-y: auto;
+  box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.516) !important;
+  font-family: 'Poppins', sans-serif; /* Added Poppins font */
+}
+
+.sidebar.collapsed {
+  width: 60px;
+}
+
+.hamburger-container {
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hamburger-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hamburger-icon {
+  font-size: 1.5rem;
+}
+
+.logo-container {
+  padding: 0.5rem 1rem 1.5rem;
+  text-align: center;
+}
+
+.logo {
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 1rem !important; /* Increased padding */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 1rem !important; /* Increased spacing */
+}
+
+.profile-icon {
+  font-size: 3rem !important; /* Increased from 2.5rem */
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.15);
+  width: 80px !important; /* Increased from 65px */
+  height: 80px !important; /* Increased from 65px */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem; /* Increased from 1rem */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Add subtle glow */
+}
+
+.user-info {
+  text-align: center;
+  width: 100%;
+}
+
+.user-info h3 {
+  font-size: 1.2rem !important; /* Increased from 1.2rem */
+  margin: 0;
+  font-weight: 600!important; /* Increased from 600 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.5px; /* Improve readability */
+}
+
+.user-info p {
+  font-size: 1rem !important; /* Increased from 0.95rem */
+  color: rgba(255, 255, 255, 0.884); /* Brighter for better visibility */
+  margin: 0.4rem 0 0; /* Increased spacing */
+  font-weight: 500; /* Slightly bolder */
+}
+
+nav {
+  flex: 1;
+  overflow-y: auto;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  margin: 0.25rem 0;
+}
+
+nav ul li a {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+nav ul li a:hover {
+  background: linear-gradient(to right, #1f4c18 0%, #529847 100%); /* Green to orange gradient */
+  transform: translateX(3px);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
+}
+
+nav ul li a:hover .nav-text {
+  color: #ffffff; /* Change to light orange/yellow for better visibility on gradient */
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.5); /* Add subtle text shadow for readability */
+}
+
+nav ul li a:hover .nav-icon {
+  color: #ffffff; /* Match the text color */
+}
+
+/* Fix conflicting active styles - remove the white background */
+nav ul li a.active {
+  background: linear-gradient(to right, #1f4c18 0%, #529847 100%); /* Green gradient */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav ul li a.active .nav-text {
+  font-weight: 700;
+  color: #ffffff; /* Keep text white for active item */
+}
+
+nav ul li a.active .nav-icon {
+  color: #ffffff; /* Keep icon white for active item */
+}
+
+nav ul li a.active {
+  background-color: #ffffff; /* Slightly brighter than hover */
+}
+
+nav ul li a.active .nav-text {
+  font-weight: 700; /* Extra bold for active item */
+}
+
+.nav-icon {
+  font-size: 1.25rem;
+  min-width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-text {
+  margin-left: 1rem;
+  white-space: nowrap;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600; /* Make text bold */
+  transition: all 0.2s ease; /* Add transition for hover effects */
+}
+
+/* Gradient for logout button */
+.logout-btn {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #f03434 0%, #eda8a8 100%); /* Red gradient */
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  margin: 1rem;
+  border-radius: 6px;
+  transition: all 0.3s ease; 
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600; /* Make text slightly bolder */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+.logout-btn:hover {
+  background: linear-gradient(135deg, #ff5252 0%, #e02222 100%); 
+  transform: translateY(-2px); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25); 
+}
+
+/* Keep collapsed button styling consistent */
+.sidebar.collapsed .logout-btn {
+  padding: 0.75rem;
+  justify-content: center;
+  margin: 1rem auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f23a3a 0%, #c91b1b 100%); /* Same gradient */
+}
+
+.sidebar.collapsed .logout-btn:hover {
+  background: linear-gradient(135deg, #ff5252 0%, #e02222 100%); /* Same hover gradient */
+  transform: translateY(-2px);
+}
+
+.sidebar.collapsed .nav-text,
+.sidebar.collapsed .user-info {
+  display: none;
+}
+
+.sidebar.collapsed .profile-icon {
+  margin-bottom: 0;
+}
+
+.sidebar.collapsed .logout-btn {
+  padding: 0.75rem;
+  justify-content: center;
+  margin: 1rem auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.sidebar.collapsed .nav-icon {
+  margin-right: 0;
+}
+
+.sidebar.collapsed nav ul li a {
+  justify-content: center;
+  padding: 0.75rem;
+}
+
+.sidebar.collapsed .hamburger-container {
+  justify-content: center;
+}
+
+.sidebar.collapsed .hamburger-btn {
+  padding: 0.5rem;
+}
+
+/* Hide hamburger button on desktop */
+@media (min-width: 769px) {
+  .hamburger-container {
+    display: none;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-220px);
+  }
+  
+  .sidebar.collapsed {
+    transform: translateX(-60px);
+  }
+  
+  .layout-container.sidebar-open .sidebar {
+    transform: translateX(0);
+  }
+  
+  /* Make profile icon smaller on mobile */
+  .profile-icon {
+    font-size: 2rem !important;
+    width: 60px !important;
+    height: 60px !important;
+    margin-bottom: 0.8rem !important;
+  }
+  
+  /* Adjust user info text size for mobile */
+  .user-info h3 {
+    font-size: 1rem !important;
+  }
+  
+  .user-info p {
+    font-size: 0.85rem !important;
+  }
+  
+  /* Reduce padding for better space utilization */
+  .profile-container {
+    padding: 1rem 0.75rem !important;
+  }
+}

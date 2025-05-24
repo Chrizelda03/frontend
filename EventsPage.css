@@ -1,0 +1,178 @@
+/* Import Poppins font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.events-page {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 12px 18px 18px 18px; /* Reduced top padding from 18px to 12px */
+  font-family: 'Poppins', sans-serif; /* Added Poppins as base font */
+}
+
+.events-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -5px; /* Added negative margin to move upward */
+  margin-bottom: 0px; /* Reduced from 20px */
+  flex-wrap: wrap;
+  gap: 13.5px; /* Reduced from 15px */
+}
+
+.events-header h1 {
+  font-size: 22px; /* Slightly increased from 21.6px */
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.events-filters {
+  display: flex;
+  gap: 10px !important; /* Increased from 7.2px */
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background-color: #f1f1f1;
+  border: none;
+  border-radius: 22px; /* Increased from 18px */
+  padding: 10px 20px !important; /* Increased from 7.2px 14.4px */
+  font-size: 15px !important; /* Increased from 12.6px */
+  font-weight: 600;
+  color: #000000;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Poppins', sans-serif;
+  margin: 2px; /* Add a small margin between buttons */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Added subtle shadow */
+}
+
+.filter-btn:hover {
+  background-color: #e0e0e0;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+  transform: translateY(-1px); /* Slight lift effect */
+}
+
+.filter-btn.active {
+  background-color: #45753d !important;
+  color: white;
+  box-shadow: 0 3px 8px rgba(69, 117, 61, 0.3); /* Green-tinted shadow for active state */
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(225px, 1fr)); /* Reduced from 250px */
+  gap: 18px; /* Reduced from 20px */
+  padding: 9px; /* Reduced from 10px */
+  justify-items: center;
+}
+
+/* Loading state */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 450px; /* Reduced from 500px */
+}
+
+.loader {
+  border: 3.6px solid #f3f3f3; /* Reduced from 4px */
+  border-radius: 50%;
+  border-top: 3.6px solid #2d5641;
+  width: 36px; /* Reduced from 40px */
+  height: 36px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 18px; /* Reduced from 20px */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* No events message */
+.no-events-message {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 36px; /* Reduced from 40px */
+  color: #777;
+  font-size: 14.4px; /* Reduced from 16px */
+  margin-top: 20px; /* Added to move message down */
+}
+
+/* Ensure consistent positioning across screen sizes */
+@media (max-width: 768px) {
+  .no-events-message {
+    margin-top: 15px; /* Slightly less on tablets */
+    padding: 27px;
+    font-size: 12.6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .no-events-message {
+    margin-top: 12px; /* Even less on mobile */
+    padding: 20px;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .events-page {
+    padding: 13.5px; /* Reduced from 15px */
+  }
+
+  .events-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9px; /* Reduced from 10px */
+  }
+
+  .events-header h1 {
+    font-size: 18px; /* Reduced from 20px */
+  }
+
+  .events-filters {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 9px; /* Reduced from 10px */
+  }
+
+  .events-grid {
+    grid-template-columns: repeat(auto-fill, minmax(198px, 1fr)); /* Reduced from 220px */
+    gap: 13.5px; /* Reduced from 15px */
+    padding: 4.5px; /* Reduced from 5px */
+  }
+
+  .no-events-message {
+    font-size: 12.6px; /* Reduced from 14px */
+    padding: 27px; /* Reduced from 30px */
+  }
+
+  .filter-btn {
+    padding: 9px 18px; /* Increased for tablets */
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .events-page {
+    padding: 9px; /* Reduced from 10px */
+  }
+
+  .events-header h1 {
+    font-size: 16.2px; /* Reduced from 18px */
+  }
+
+  .events-grid {
+    grid-template-columns: 1fr;
+    gap: 9px; /* Reduced from 10px */
+  }
+
+  .filter-btn {
+    padding: 8px 16px; /* Increased from 5.4px 10.8px */
+    font-size: 13px; /* Increased from 10.8px */
+  }
+}

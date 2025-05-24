@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.about-us-card {
+  background-color: #ffffff;
+  padding: 1.275rem;
+  border-radius: 30px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 3.4px 5.1px rgba(0, 0, 0, 0.05);
+  border:2px solid #888888;
+  border-left: 10px solid #888888;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: center; 
+}
+
+.about-us-card h2 {
+  color: #646464;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0rem;
+  text-align: center; /* Ensure header is centered */
+}
+
+.about-us-card p {
+  color: #4a5568;
+  line-height: 1.445;
+  margin: 0 auto; /* Center paragraphs */
+  max-width: 90%; /* Optional: limit width for better readability */
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+  gap: 1.275rem;
+}
+
+.clearance-card,
+.membership-card {
+  background-color: #ffffff;
+  padding: 1.275rem;
+  border-radius: 30px;
+  box-shadow: 0 3.4px 5.1px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+}
+
+.clearance-card {
+  border: 2px solid #fd8443;
+  border-left: 10px solid #fd8443;
+}
+
+.membership-card {
+  border-radius: 30px !important;
+  border: 2px solid #4e7948;
+  border-left: 10px solid #4e7948;
+  transition: none;
+}
+
+.clearance-card h3,
+.membership-card h3 {
+  color: #1a2a44;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0.85rem;
+}
+
+.clearance-table,
+.membership-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 6.8px;
+  overflow: hidden;
+}
+
+.clearance-table th,
+.clearance-table td,
+.membership-table th,
+.membership-table td {
+  padding: 0.6375rem;
+  border: 0.85px solid #e2e8f0;
+  text-align: left;
+}
+
+.clearance-table th,
+.membership-table th {
+  background-color: #f1f5f9;
+  font-weight: 500;
+  color: #1a2a44;
+}
+
+.clearance-table tr:nth-child(even),
+.membership-table tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+.status-cleared {
+  color: #48b14c;
+  font-weight: 500;
+}
+
+.status-not-cleared {
+  color: #fb7832;
+  font-weight: 500;
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 170px;
+  font-size: 0.85rem;
+  color: #4a5568;
+}
+
+.error-message {
+  background-color: #fef2f2;
+  color: #dc2626;
+  padding: 0.85rem;
+  border-radius: 6.8px;
+  margin: 0.85rem 0;
+  font-weight: 500;
+}
+.membership-card {
+  transition: none; /* Remove any transitions */
+}
+
+.membership-card:hover {
+  transform: none !important; 
+  box-shadow: 0 3.4px 5.1px rgba(0, 0, 0, 0.05) !important; /* Keep the same box-shadow */
+  cursor: default; 
+}
+.membership-card * {
+  cursor: default;
+}
+
+.membership-table tr:hover {
+  background-color: inherit !important; /* Prevent row highlighting */
+}
+
+@media (max-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    gap: 0.765rem;
+  }
+  
+  .about-us-card,
+  .clearance-card,
+  .membership-card {
+    padding: 0.95625rem;
+    border-radius: 30px;
+  }
+  
+  /* All headers same size */
+  .about-us-card h2,
+  .clearance-card h3,
+  .membership-card h3 {
+    font-size: 1.1rem; /* Standardized header size */
+    margin-bottom: 0.65rem;
+  }
+  
+  /* All paragraph text same size */
+  .about-us-card p,
+  .clearance-card p,
+  .membership-card p {
+    font-size: 0.85rem; /* Standardized text size */
+    line-height: 1.4;
+  }
+  
+  /* Table text size */
+  .clearance-table th,
+  .clearance-table td,
+  .membership-table th,
+  .membership-table td {
+    font-size: 0.85rem; /* Match paragraph text */
+  }
+}
+
+@media (max-width: 480px) {
+  .about-us-card,
+  .clearance-card,
+  .membership-card {
+    padding: 0.765rem;
+    border-radius: 30px;
+  }
+  
+  /* All headers same size but smaller than tablet */
+  .about-us-card h2,
+  .clearance-card h3,
+  .membership-card h3 {
+    font-size: 0.95rem; /* Standardized smaller header */
+    margin-bottom: 0.5rem;
+  }
+  
+  /* All paragraph text same size */
+  .about-us-card p,
+  .clearance-card p,
+  .membership-card p {
+    font-size: 0.8rem; /* Standardized smaller text */
+    line-height: 1.35;
+  }
+  
+  /* Smaller table text */
+  .clearance-table th,
+  .clearance-table td,
+  .membership-table th,
+  .membership-table td {
+    padding: 0.3825rem;
+    font-size: 0.75rem; /* Slightly smaller than paragraph text */
+  }
+}
