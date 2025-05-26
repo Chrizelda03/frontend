@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Konkhmer+Sleokchher&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 * {
   margin: 0;
@@ -39,7 +40,7 @@ html, body {
   justify-content: space-between;
   align-items: center;
   padding: 20px 35px 10px;
-  margin-bottom: 15px ;
+  margin-bottom: 5px; /* Reduced from 15px to decrease the gap */
   width: 100%;
   position: absolute;
   top: 0;
@@ -55,6 +56,8 @@ html, body {
 .header-logo {
   width: 80px;
   height: auto;
+  filter: brightness(0) saturate(100%) invert(56%) sepia(75%) saturate(1582%) hue-rotate(343deg) brightness(98%) contrast(95%); /* Changed to #f47c3c orange */
+
 }
 
 .header-title {
@@ -67,7 +70,7 @@ html, body {
 .specs {
   font-size: 40px;
   color: #ffffff;
-  margin-right: 0.3rem;
+  margin-right: 2px;  /* Changed from 0.3rem to 0 */
   text-shadow: 4px 3px 3px rgba(0, 0, 0, 0.5);
 }
 
@@ -127,7 +130,7 @@ html, body {
   position: relative;
   z-index: 1;
   letter-spacing: 5px;
-  padding-top: 8rem; /* Added top padding */
+  padding-top: 5.5rem; /* Added top padding */
   gap: 2.5rem; /* Space between elements */
 }
 
@@ -136,9 +139,10 @@ html, body {
   font-size: 3.5rem;
   line-height: 4rem;
   font-weight: bold;
-  margin-bottom: 2rem; /* Space below acronym */
-  padding-left: 1rem; /* Move text to the right */
-  margin-left: 2rem; /* Additional right movement */
+  margin-top: 2rem;
+  margin-bottom: 4.5rem; /* Reduced from 6rem to decrease the gap */
+  padding-left: 0;
+  margin-left: 2rem;
   text-shadow: 4px 3px 4px rgba(0, 0, 0, 0.731);
 }
 
@@ -150,11 +154,9 @@ html, body {
 }
 
 .seals {
-  margin-top: 2rem; /* Space above seals */
-  margin-bottom: 1rem; /* Space below seals */
+  margin-top: 1.5rem; /* Adjusted from previous value */
   display: flex;
   align-items: center;
-  gap: 1rem; /* Space between seal images */
 }
 
 .seals img {
@@ -176,8 +178,8 @@ html, body {
 }
 
 .seal-image {
-  width: 800px;
-  height: 800px;
+  width: 900px;
+  height: 900px;
   object-fit: cover;
   border: 18px solid #ffffff;
   border-radius: 50%;
@@ -208,7 +210,7 @@ html, body {
   padding: 40px 30px;
   position: relative;
   box-shadow: 0 -8px 16px rgba(0, 0, 0, 0.2);
-  font-family: 'Konkhmer Sleokchher', sans-serif;
+  font-family: 'Poppins', sans-serif; /* Changed from 'Konkhmer Sleokchher' */
   animation: slideUp 0.4s ease-out;
 }
 
@@ -256,6 +258,7 @@ html, body {
   border: 1px solid #ddd;
   border-radius: 25px;
   transition: border-color 0.2s;
+  font-family: 'Poppins', sans-serif;
 }
 
 .login-form input:focus {
@@ -269,6 +272,7 @@ html, body {
   text-align: center;
   margin-bottom: 15px;
   font-size: 0.9rem;
+  font-family: 'Poppins', sans-serif;
 }
 
 .modal-login-button {
@@ -277,16 +281,17 @@ html, body {
   font-size: 1rem;
   border: none;
   border-radius: 25px;
-  background-color: #253F21;
+  background:linear-gradient(to left, #253F21 0, #349137); /* Changed from #3a4218 (dark green) to match the orange accent color */
   color: #fff;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   font-weight: bold;
+  font-family: 'Poppins', sans-serif;
 }
 
 .modal-login-button:hover {
-  background-color: #3a4218;
+  background:linear-gradient(to left, #253F21 0, #349137); /* Changed from #3a4218 (dark green) to match the orange accent color */
   transform: translateY(-2px);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
@@ -300,7 +305,7 @@ html, body {
 .officer-login-link {
   margin-top: 1rem;
   text-align: center;
-  font-family: 'Konkhmer Sleokchher', sans-serif;
+  font-family: 'Poppins', sans-serif; /* Changed from 'Konkhmer Sleokchher' */
   font-size: 0.9rem;
   color: #333;
 }
@@ -315,6 +320,28 @@ html, body {
   text-decoration: underline;
 }
 
+/* Password visibility toggle styles */
+.password-container {
+  position: relative;
+  width: 100%;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 15px;
+  top: 40%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #4B5320;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+  z-index: 5;
+}
+
+.password-toggle:hover {
+  color: #3a4218;
+}
+
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
   .login-page {
@@ -324,13 +351,20 @@ html, body {
   }
   
   .top-elements {
-    padding: 15px 20px 5px;
+    padding: 15px 10px 5px 15px; /* Reduced left padding from 20px to 5px */
     margin-bottom: 10px;
-    justify-content: center;
+    justify-content: flex-start;
+  }
+  
+  .branding {
+    margin-left: 0; /* Removed !important to allow proper alignment */
   }
   
   .header-logo {
     width: 50px;
+    margin-right: 0;
+    filter: brightness(0) saturate(100%) invert(56%) sepia(75%) saturate(1582%) hue-rotate(343deg) brightness(98%) contrast(95%); /* Changed to #f47c3c orange */
+
   }
   
   .header-title {
@@ -339,8 +373,11 @@ html, body {
   
   .specs {
     font-size: 30px;
-    margin-right: 0.6rem; /* Adjusted for mobile */
+    margin-right: 2px; /* Changed from 0 to add space between SPECS and Nexus */
     text-shadow: 4px 3px 3px rgb(0, 0, 0);
+  }
+  .nexus {
+    text-shadow: 4px 3px 3px rgba(0, 0, 0, 0.8);
   }
   
   .login-button {
@@ -369,6 +406,10 @@ html, body {
   
   .right-section {
     padding: 20px 0;
+    display: flex;
+    justify-content: flex-start; /* Changed from center to left-align */
+    align-items: center;
+    width: 100%;
   }
   
   .acronym {
@@ -395,8 +436,9 @@ html, body {
     width: 180px;
     height: 180px;
     border-width: 3px;
-    margin-top: 15px;  /* Smaller adjustment for mobile */
-    margin-left: 10px;
+    margin-top: 15px;
+    margin-left: auto; /* Remove left margin */
+    margin-right: auto; /* Push to the left */
   }
   
   /* Mobile Login Panel */
