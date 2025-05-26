@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { FaUser } from 'react-icons/fa'; // Import the user icon
 import { useNavigate } from 'react-router-dom';
 import OfficerLoginForm from '../components/OfficerLoginForm';
 import '../styles/OfficerLoginPage.css';
@@ -8,6 +9,7 @@ const OfficerLoginPage = () => {
   const [showModal, setShowModal] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
+  // Handle window resize for responsive behavior
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
@@ -17,6 +19,7 @@ const OfficerLoginPage = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // Show login panel by default on mobile
   useEffect(() => {
     if (isMobile) {
       setShowModal(true);
@@ -35,37 +38,37 @@ const OfficerLoginPage = () => {
   };
 
   return (
-    <div className="login-page">
-      <div className="top-elements">
-        <div className="branding">
-          <img src="/images/diamond_design.png" alt="SPECS Logo" className="header-logo" />
-          <h1 className="header-title">
-            <span className="specs">SPECS</span> <span className="nexus">Nexus</span>
+    <div className="officer-login-page">
+      <header className="officer-site-header officer-transparent-header">
+        <div className="officer-header-content">
+          <img src="/images/diamond_design.png" alt="SPECS Logo" className="officer-header-logo" />
+          <h1 className="officer-header-title">
+            <span className="officer-specs">SPECS</span><span className="officer-nexus">Nexus</span>
           </h1>
         </div>
         {!isMobile && (
-          <button className="login-button" onClick={openModal}>
-            <i className="user-icon"></i>
-            Login
+          <button className="officer-login-button" onClick={openModal}>
+            <FaUser className="officer-login-icon" />
+            Officer Login
           </button>
         )}
-      </div>
+      </header>
 
-      <div className="container">
+      <div className="officer-container">
         {isMobile ? (
           <>
-            <div className="right-section">
-              <img src="/images/specslogo.png" alt="SPECS Seal" className="seal-image" />
+            <div className="officer-right-section">
+              <img src="/images/specslogo.png" alt="SPECS Seal" className="officer-seal-image" />
             </div>
-            <div className="left-section">
-              <ul className="acronym">
+            <div className="officer-left-section">
+              <ul className="officer-acronym">
                 <li><span>S</span>ociety of</li>
                 <li><span>P</span>rogramming</li>
                 <li><span>E</span>nthusiasts in</li>
                 <li><span>C</span>omputer</li>
                 <li><span>S</span>cience</li>
               </ul>
-              <div className="seals">
+              <div className="officer-seals">
                 <img src="/images/gclogo.png" alt="Gordon College Seal" />
                 <img src="/images/ccslogo.png" alt="CCS Seal" />
               </div>
@@ -73,21 +76,21 @@ const OfficerLoginPage = () => {
           </>
         ) : (
           <>
-            <div className="left-section">
-              <ul className="acronym">
+            <div className="officer-left-section">
+              <ul className="officer-acronym">
                 <li><span>S</span>ociety of</li>
                 <li><span>P</span>rogramming</li>
                 <li><span>E</span>nthusiasts in</li>
                 <li><span>C</span>omputer</li>
                 <li><span>S</span>cience</li>
               </ul>
-              <div className="seals">
+              <div className="officer-seals">
                 <img src="/images/gclogo.png" alt="Gordon College Seal" />
                 <img src="/images/ccslogo.png" alt="CCS Seal" />
               </div>
             </div>
-            <div className="right-section">
-              <img src="/images/specslogo.png" alt="SPECS Seal" className="seal-image" />
+            <div className="officer-right-section">
+              <img src="/images/specslogo.png" alt="SPECS Seal" className="officer-seal-image" />
             </div>
           </>
         )}
@@ -95,18 +98,15 @@ const OfficerLoginPage = () => {
 
       {showModal && (
         <div
-          className="modal"
+          className="officer-login-modal"
           onClick={(e) => {
-            if (e.target.classList.contains('modal') && !isMobile) closeModal();
+            if (e.target.classList.contains('officer-login-modal') && !isMobile) closeModal();
           }}
         >
-          <div className={`modal-content ${isMobile ? 'mobile-modal' : ''}`}>
-            {!isMobile && <span className="close" onClick={closeModal}>&times;</span>}
-            <h2 className="welcome-title">Officer Login</h2>
+          <div className={`officer-modal-contents ${isMobile ? 'officer-mobile-modal' : ''}`}>
+            {!isMobile && <span className="officer-close" onClick={closeModal}>&times;</span>}
+            <h2 className="officer-welcome-title">Officer Login</h2>
             <OfficerLoginForm onLoginSuccess={handleLoginSuccess} />
-            <div className="member-login-link">
-              Not an officer? <a href="/">Member login</a>
-            </div>
           </div>
         </div>
       )}
