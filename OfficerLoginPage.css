@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Konkhmer+Sleokchher&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 * {
   margin: 0;
@@ -15,7 +16,7 @@ html, body {
   background-color: #253F21;
 }
 
-.login-page {
+.officer-login-page {
   font-family: 'Dela Gothic One', sans-serif;
   background-color: #253F21;
   color: white;
@@ -30,63 +31,67 @@ html, body {
   overflow: hidden;
 }
 
-.site-header {
-  display: none; /* Hide the original header */
-}
-
-.top-elements {
+.officer-site-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 35px 10px;
-  margin-bottom: 15px;
-  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 20px;
+  left: 35px;
+  right: 35px;
   z-index: 10;
+  border: none;
+  box-shadow: none;
+  height: auto;
 }
 
-.branding {
+.officer-header-content {
   display: flex;
   align-items: center;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
 }
 
-.header-logo {
-  width: 80px;
+.officer-header-logo {
+  width: 80px; /* Reduced size to better match text height */
   height: auto;
-  /* Updated filter to better match #f47c3c orange */
-  filter: brightness(0) saturate(100%) invert(56%) sepia(51%) 
-         saturate(3688%) hue-rotate(346deg) brightness(99%) contrast(95%);
-  transition: filter 0.3s ease;
+  margin-right: 0px; /* Increased from 10px to add more space */
+  display: flex;
+  align-self: center; /* Ensure vertical centering */
+  filter: brightness(0) saturate(100%) invert(56%) sepia(75%) saturate(1582%) hue-rotate(343deg) brightness(98%) contrast(95%); /* Changed to #f47c3c orange */
 }
 
-.header-title {
+.officer-header-title {
   font-size: 2.2rem;
   font-weight: bold;
   display: flex;
   align-items: center;
+  margin-left: 0; /* Remove any left margin */
 }
 
-.specs {
+.officer-specs {
   font-size: 40px;
-  color: #ffffff; /* Different color for officer login */
-  margin-right: 0.3rem;
+  color: #ffffff;
+  margin-right: 2px; 
   text-shadow: 4px 3px 3px rgba(0, 0, 0, 0.5);
 }
 
-.nexus {
-  color: #f47c3c; /* Different color for officer login */
+.officer-nexus {
+  color: #f47c3c;
   text-shadow: 4px 3px 3px rgba(0, 0, 0, 0.5);
+
 }
 
-
-.login-button {
+.officer-login-button {
   background: linear-gradient(135deg, #ffffff 0%, #e9f0d1 100%);
   color: #253F21;
   border: none;
   padding: 10px 22px;
-  padding-left: 18px;
+  padding-left: 18px; /* Increased from 15px */
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -94,80 +99,79 @@ html, body {
   font-family: 'Poppins', sans-serif;
   display: flex;
   align-items: center;
-  gap: 3px;
+  gap: 8px; /* Increased from 3px for better icon spacing */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.login-button::before {
-  content: "\f007"; /* Font Awesome user icon */
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  display: inline-block;
-  font-size: 18px;
-  margin-right: 2px;
-}
-
-.login-button:hover {
+.officer-login-button:hover {
   background: linear-gradient(135deg, #4b9040 0%, #253f21 100%);
   color: #ffffff;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.container {
+.officer-login-icon {
+  font-size: 18px; /* Size of the icon */
+  margin-right: 4px; /* Space between icon and text */
+  transition: transform 0.3s ease;
+}
+
+.officer-login-button:hover .officer-login-icon {
+  transform: scale(1.1);
+}
+
+.officer-container {
   position: relative;
   display: flex;
   flex: 1;
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
-  padding: 3.5rem 2rem 1rem;
+  padding: 1rem 2rem;
 }
 
-.left-section {
+.officer-left-section {
   width: 50%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   position: relative;
   z-index: 1;
   letter-spacing: 5px;
-  padding-top: 8rem;
-  gap: 2.5rem;
 }
 
-.acronym {
+.officer-acronym {
   list-style: none;
   font-size: 3.5rem;
   line-height: 4rem;
   font-weight: bold;
-  margin-bottom: 2.5rem;
-  padding-left: 1rem;
-  margin-left: 1rem;
+  margin-top: 10rem;
+  margin-bottom: 7rem; /* Reduced from 2rem to decrease the gap */
+  padding-left: 0rem;
+  margin-left: 2rem;
   text-shadow: 4px 3px 4px rgba(0, 0, 0, 0.731);
 }
 
-.acronym li span {
+.officer-acronym li span {
   color: #f47c3c;
   font-weight: bold;
   margin-right: 0.5rem;
   text-shadow: 4px 3px 3px rgba(0, 0, 0, 0.5);
 }
 
-.seals {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+.officer-seals {
+  margin-top: 1.5rem; /* Reduced from 3rem to decrease the gap */
   display: flex;
   align-items: center;
-  gap: 0rem;
 }
 
-.seals img {
-  width: 70px;
-  margin-right: 15px;
+.officer-seals img {
+  width: 75px; /* Increased from 65px */
+  margin-right: 15px; /* Increased from 10px */
+  transition: transform 0.3s ease;
 }
 
-.right-section {
+.officer-right-section {
   width: 50%;
   display: flex;
   justify-content: center;
@@ -175,26 +179,19 @@ html, body {
   position: relative;
 }
 
-/* For officer page, use a watermark-style logo in background */
-.right-section {
-  position: relative;
-}
-
-.seal-image {
-  width: 800px;
-  height: 800px;
+.officer-seal-image {
+  width: 900px;
+  height: 900px;
   object-fit: cover;
   border: 18px solid #ffffff;
   border-radius: 50%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  opacity: 1; /* Changed from 0.100 to 1 for full opacity */
-  margin-top: 200px;
-  margin-left: 100px;
+  margin-top: 240px;    /* Move down */
+  margin-left: 100px;   /* Move right */
   position: relative;
 }
 
-/* Login Modal Styles - Adjusted for Officer Login */
-.modal {
+.officer-login-modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -207,240 +204,18 @@ html, body {
   z-index: 999;
 }
 
-.modal-content {
+.officer-modal-contents {
   background-color: #fff;
-  border-radius: 25px 25px 25px 25px !important;
-  width: 450px !important;
-  padding: 40px 35px !important;
+  border-radius: 25px;
+  width: 450px;
+  padding: 40px 30px;
   position: relative;
   box-shadow: 0 -8px 16px rgba(0, 0, 0, 0.2);
-  font-family: 'Konkhmer Sleokchher', sans-serif;
-  animation: slideUp 0.4s ease-out
+  font-family: 'Poppins', sans-serif; /* Changed from 'Konkhmer Sleokchher' */
+  animation: officer-slideUp 0.4s ease-out;
 }
 
-@keyframes slideDown {
-  from {
-    transform: translateY(-20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.welcome-title {
-  font-family: 'Dela Gothic One', cursive;
-  font-size: 2.5rem;
-  text-align: center;
-  margin-bottom: 40px !important;
-  color: #253f21;
-}
-
-.close {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  font-size: 28px;
-  color: #aaa;
-  cursor: pointer;
-}
-
-.close:hover {
-  color: #000;
-}
-
-.modal-content input {
-  width: 100%;
-  padding: 15px;
-  margin-bottom: 20px;
-  font-size: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 25px;
-  transition: border-color 0.2s;
-}
-
-.modal-content input:focus {
-  outline: none;
-  border-color: #205328;
-  box-shadow: 0 0 0 2px rgba(75, 83, 32, 0.2);
-}
-
-.error {
-  color: #e53935;
-  text-align: center;
-  margin-bottom: 15px;
-  font-size: 0.9rem;
-}
-
-.modal-login-button {
-  width: 100%;
-  padding: 15px;
-  font-size: 1.1rem;
-  border: none;
-  border-radius: 25px;
-  background-color: #cbffc3;
-  color: #253f21;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s ease;
-  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.185);
-  font-weight: bold;
-}
-
-.modal-login-button:hover {
-  background: linear-gradient(135deg, #4b9040 0%, #253f21 100%);
-  color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-}
-
-.modal-login-button:disabled {
-  background-color: #a0a0a0;
-  cursor: not-allowed;
-  transform: none;
-}
-
-.member-login-link {
-  margin-top: 1rem;
-  text-align: center;
-  font-family: 'Konkhmer Sleokchher', sans-serif;
-  font-size: 0.9rem;
-  color: #333;
-}
-
-.member-login-link a {
-  color: #f47c3c;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.member-login-link a:hover {
-  text-decoration: underline;
-}
-
-/* Mobile Responsive Styles */
-@media (max-width: 768px) {
-  .login-page {
-    overflow-y: auto;
-    min-height: 100%;
-    height: auto;
-  }
-  
-  .top-elements {
-    padding: 15px 20px 5px;
-    margin-bottom: 10px;
-    justify-content: center;
-  }
-  
-  .header-logo {
-    width: 50px;
-    /* Same filter for mobile */
-    filter: brightness(0) saturate(100%) invert(56%) sepia(51%) 
-           saturate(3688%) hue-rotate(346deg) brightness(99%) contrast(95%);
-  }
-  
-  .header-title {
-    font-size: 1.8rem;
-  }
-  
-  .specs {
-    font-size: 30px;
-    margin-right: 0.6rem;
-    text-shadow: 4px 3px 3px rgb(0, 0, 0);
-  }
-  
-  .officer-badge {
-    font-size: 0.7rem;
-    padding: 2px 8px;
-  }
-  
-  .login-button {
-    display: none;
-  }
-  
-  .container {
-    flex-direction: column;
-    padding: 0;
-    height: auto;
-    flex: 1;
-    padding-bottom: 50px;
-    padding-top: 2.5rem;
-  }
-  
-  .left-section, .right-section {
-    width: 100%;
-    text-align: center;
-  }
-  
-  .left-section {
-    padding: 20px;
-    gap: 1.5rem;
-  }
-  
-  .right-section {
-    padding: 20px 0;
-  }
-  
-  .acronym {
-    font-size: 1.8rem;
-    line-height: 2rem;
-    letter-spacing: 2px;
-    padding-left: 0;
-    margin-left: 0;
-  }
-  
-  .seals {
-    justify-content: center;
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
-    gap: 1rem;
-  }
-  
-  .seals img {
-    width: 65px;
-    margin: 0 10px;
-  }
-  
-  .seal-image {
-    width: 180px;
-    height: 180px;
-    border-width: 3px;
-    margin-top: 15px;
-    margin-left: 10px;
-    opacity: 1; /* Full opacity for mobile as well */
-  }
-  
-  /* Mobile Login Panel - Updated to match LoginPage but positioned lower */
-  .modal {
-    background: none;
-    align-items: flex-end;
-    position: fixed;
-    bottom: 20px; /* Changed from 0 to create space at bottom */
-    left: 0;
-    right: 0;
-    height: auto;
-    padding: 0 10px; /* Add side padding for floating appearance */
-  }
-  
-  .modal-content {
-    width: 100% !important;
-    border-radius: 20px !important; /* Rounded on all corners since it's floating */
-    padding: 30px 20px 40px !important;
-    margin-bottom: 0;
-    min-height: 50vh;
-    box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.25);
-  }
-  
-  /* Fix for iOS devices */
-  .mobile-modal {
-    border-radius: 20px !important; /* All corners rounded */
-    margin-bottom: 0 !important;
-    padding-bottom: env(safe-area-inset-bottom, 40px);
-  }
-}
-
-/* Animation for mobile login panel */
-@keyframes slideUp {
+@keyframes officer-slideUp {
   from {
     transform: translateY(100%);
     opacity: 0;
@@ -451,20 +226,265 @@ html, body {
   }
 }
 
-.slide-up-enter {
+.officer-welcome-title {
+  font-family: 'Dela Gothic One', cursive; /* Keep this unchanged */
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #253F21;
+}
+
+.officer-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.officer-close:hover {
+  color: #000;
+}
+
+.officer-login-form {
+  width: 100%;
+}
+
+.officer-input {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  transition: border-color 0.2s;
+  font-family: 'Poppins', sans-serif;
+}
+
+.officer-input:focus {
+  outline: none;
+  border-color: #4B5320;
+  box-shadow: 0 0 0 2px rgba(75, 83, 32, 0.2);
+}
+
+.officer-password-container {
+  position: relative;
+  width: 100%;
+}
+
+.officer-password-toggle {
+  position: absolute;
+  right: 15px;
+  top: 40%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #4B5320;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.officer-password-toggle:hover {
+  color: #3a4218;
+}
+
+.officer-error {
+  color: #e53935;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.officer-modal-login-button {
+  width: 100%;
+  padding: 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px;
+  background:linear-gradient(to left, #253F21 0, #349137); /* Changed from #3a4218 (dark green) to match the orange accent color */ 
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+}
+
+.officer-modal-login-button:hover {
+  background:linear-gradient(to left, #253F21 0, #349137); /* Changed from #3a4218 (dark green) to match the orange accent color */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.officer-modal-login-button:disabled {
+  background-color: #a0a0a0;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.officer-student-login-link {
+  margin-top: 1rem;
+  text-align: center;
+  font-family: 'Poppins', sans-serif; /* Changed from 'Konkhmer Sleokchher' */
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.officer-student-login-link a {
+  color: #f47c3c;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.officer-student-login-link a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .officer-login-page {
+    overflow-y: auto;
+    min-height: 100%;
+    height: auto;
+  }
+  
+  .officer-site-header {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    padding: 0;
+  }
+  
+  .officer-header-content {
+    justify-content: center;
+  }
+  
+  .officer-header-logo {
+    width: 50px;
+    margin-right: 0; /* Changed from 12px to remove spacing */
+    filter: brightness(0) saturate(100%) invert(56%) sepia(75%) saturate(1582%) hue-rotate(343deg) brightness(98%) contrast(95%); /* Changed to #f47c3c orange */
+  }
+  
+  .officer-header-title {
+    font-size: 1.8rem;
+  }
+  
+  .officer-specs {
+    font-size: 30px;
+    text-shadow: 4px 3px 3px rgba(0, 0, 0, 0.8); /* Enhanced shadow */
+  }
+  
+  .officer-nexus {
+    text-shadow: 4px 3px 3px rgba(0, 0, 0, 0.8); /* Enhanced shadow */
+
+  }
+  
+  .officer-login-button {
+    display: none;
+  }
+  
+  .officer-container {
+    flex-direction: column;
+    padding: 0;
+    height: auto;
+    flex: 1;
+    padding-bottom: 50px;
+  }
+  
+  .officer-left-section, .officer-right-section {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .officer-left-section {
+    padding: 20px;
+    gap: 1.5rem;
+  }
+  
+  .officer-right-section {
+    padding: 20px 0;
+  }
+  
+  .officer-acronym {
+    font-size: 1.8rem;
+    line-height: 2rem;
+    letter-spacing: 2px;
+    margin-top: 1.5rem; /* Added to move acronym down on mobile */
+  }
+  
+  .officer-seals {
+    justify-content: center;
+    margin-top: 1.5rem;
+    margin-bottom: 30px;
+  }
+  
+  .officer-seals img {
+    width: 45px;
+    margin: 0 5px;
+  }
+  
+  .officer-seal-image {
+    width: 180px;
+    height: 180px;
+    border-width: 3px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 55px; /* Add space below header */
+    position: relative;
+  }
+  
+  .officer-login-modal {
+    background: none;
+    align-items: flex-end;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+  }
+  
+  .officer-modal-contents {
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+    padding: 30px 20px 40px;
+    margin-bottom: 0;
+    min-height: 50vh;
+    box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.25);
+  }
+  
+  .officer-welcome-title {
+    color: #253f21;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .officer-mobile-modal {
+    border-radius: 20px 20px 0 0;
+    margin-bottom: 0 !important;
+    padding-bottom: env(safe-area-inset-bottom, 40px);
+  }
+  
+  .officer-student-login-link {
+    font-size: 0.85rem;
+    margin-top: 0.75rem;
+  }
+}
+
+.officer-slide-up-enter {
   transform: translateY(100%);
 }
 
-.slide-up-enter-active {
+.officer-slide-up-enter-active {
   transform: translateY(0);
   transition: transform 0.3s ease;
 }
 
-.slide-up-exit {
+.officer-slide-up-exit {
   transform: translateY(0);
 }
 
-.slide-up-exit-active {
+.officer-slide-up-exit-active {
   transform: translateY(100%);
   transition: transform 0.3s ease;
 }
