@@ -1,19 +1,17 @@
-/* Import Poppins font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.75rem 1.5rem ;
-  border-radius: 10px;
-  background: linear-gradient(135deg, #f2ffee, #caf9d0);
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #9fce98 0%, #2a6d2d 100%); /* Changed from solid white to gradient */
   width: 100%;
   border-bottom: 1px solid #e2e8f0;
   position: sticky;
   top: 0;
   z-index: 40;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.1);
   font-family: 'Poppins', sans-serif; /* Added Poppins font */
 }
 
@@ -27,7 +25,7 @@
   background: none;
   border: none;
   font-size: 1.25rem;
-  color: #253f21;
+  color: #253f21; /* Changed to white for contrast on dark background */
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -39,25 +37,22 @@
 }
 
 .toggle-sidebar-btn:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(255, 255, 255, 0.1); /* Lighter background on hover */
 }
 
-/* Make the page title bolder and use Poppins */
 .page-title {
-  font-size: 1.70rem !important;
-  font-weight: 700; /* Increased from 600 to make it bolder */
-  color: #253f21;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #253f21; /* Changed to white for contrast on dark background */
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  letter-spacing: 0.5px; /* Added for better readability */
+  font-family: 'Poppins', sans-serif; /* Added Poppins font */
 }
 
 .datetime {
-  font-size: 1rem;
-  color: #4a5568;
+  font-size: 0.9rem;
+  color: #e0e0e0; /* Lighter color for contrast on dark background */
   text-align: right;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500; /* Medium weight for datetime */
+  font-family: 'Poppins', sans-serif; /* Added Poppins font */
 }
 
 @media (max-width: 768px) {
@@ -72,7 +67,7 @@
   }
 
   .page-title {
-    font-size: 1.5rem !important;
+    font-size: 1.1rem;
   }
 
   .datetime {
